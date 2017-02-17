@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Inventory Project</title>
+		<meta name="description" content="">
+		<!-- Link tag for including static css file -->
+		<!-- Note that path that django serves static files from is configurable in settings.py -->
+		<!-- using static url variable. Below is default which is /static/main.css -->
+		<link rel="stylesheet" href="{% static 'main.css' %}">
+	</head>
+	<body>
+		{% block content %}
+		{% endblock content %}
+		<!-- Add main.js javascript static reference here -->
+		<script src="{% static 'main.js' %}"></script>
+	</body>
+</html>

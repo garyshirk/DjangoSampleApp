@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!-- Provide link back to index view -->
+	<a href="{% url 'index' %}">Back to item list</a>
+	<!-- Show item title -->
+	<h3>{{ item.title|capfirst }}
+	<!-- Show amount in stock -->
+	<p> {{ item.amount }} currently in stock</p>
+	<!-- Show description -->
+	<h4>Description</h4>
+	<p> {{ item.description }}</p>
+	<a href="{% url 'backorder_detail' item.id %}">Show Number of Items on Back Order</a>
+	
+{% endblock %}
