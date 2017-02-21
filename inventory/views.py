@@ -7,6 +7,8 @@ from django.http import Http404
 
 from inventory.models import Item
 
+from inventory.models import Staff
+
 def index(request):
 	items = Item.objects.exclude(amount=0)
 	return render(request, 'inventory/index.html', {
@@ -30,6 +32,12 @@ def backorder_detail(request, id):
 		raise Http404('This item does not exist')
 	return render(request, 'inventory/backorder_detail.html', {
 		'item': item,
+	})
+
+def employee_list(request):
+	staffs = Staff.objects.all()
+	return render(request, 'inventory/employee_list.html', {
+		'staffs': staffs,
 	})
 
 	#return HttpResponse('<p>In item_detail view with id {0}</p>'.format(id))

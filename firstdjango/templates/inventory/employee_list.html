@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!-- List of all employees -->
+	<h3>Employees</h3>
+	<ul>
+		{% for staff in staffs %}
+			<li>
+				{{ staff.firstname|capfirst }} {{ staff.lastname|capfirst }}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
